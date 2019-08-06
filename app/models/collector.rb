@@ -1,2 +1,0 @@
-class Collector < ApplicationRecord
-end
