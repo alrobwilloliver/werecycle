@@ -10,19 +10,19 @@ Order.delete_all
 
 customer_one = Customer.create(name: 'Zoe')
 
-order_one = Order.create(time: '2019-08-15, 16:30', address: '9 High Street', collection_status: 'collected', customer_phone_number: 15215937852, customer_id: customer_one.id)
+order_one = Order.create(time: '2019-08-15, 16:30', address: '9 High Street', customer_phone_number: 15215937852, customer_id: customer_one.id)
 
 customer_two = Customer.create(name: 'John')
 
-order_two = Order.create(time: '2019-08-16, 15:30', address: '10 Low Street', collection_status: 'order available to take', customer_phone_number: 8888888, customer_id: customer_two.id)
+order_two = Order.create(time: '2019-08-16, 15:30', address: '10 Low Street', customer_phone_number: 8888888, customer_id: customer_two.id)
 
 customer_three = Customer.create(name: 'Alan')
 
-order_three = Order.create(time: '2019-08-20, 17:30', address: '10 Anonymous Street', collection_status: 'order available to take', customer_phone_number: 8888888, customer_id: customer_three.id)
+order_three = Order.create(time: '2019-08-20, 17:30', address: '10 Anonymous Street', customer_phone_number: 8888888, customer_id: customer_three.id)
 
 customer_four = Customer.create(name: 'Augusto')
 
-order_four = Order.create(time: '2019-08-30, 8:30', address: '10 Known Street', collection_status: 'order taken', customer_phone_number: 111111111, customer_id: customer_four.id)
+order_four = Order.create(time: '2019-08-30, 8:30', address: '10 Known Street', customer_phone_number: 111111111, customer_id: customer_four.id)
 
 trash_collector_one = TrashCollector.create(name: 'ZoeNumberTWO', phone_number: '911')
 
