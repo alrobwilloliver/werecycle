@@ -10,6 +10,7 @@ class Api::V1::OrdersController < Api::V1::BaseController
   def create
     @order = Order.new(order_params)
     @order.save
+    render :show
   end
 
   def show
@@ -33,7 +34,7 @@ class Api::V1::OrdersController < Api::V1::BaseController
   end
 
   def order_params
-    params.require(:order).permit(:trash_collector_id, :time, :address, :collection_status, :customer_phone_number, :customer_id)
+    params.require(:order).permit(:trash_collector_id, :time, :date, :address, :collection_status, :customer_phone_number, :customer_id)
   end
 
 end
