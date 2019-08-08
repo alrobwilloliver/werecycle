@@ -20,16 +20,18 @@ ActiveRecord::Schema.define(version: 2019_08_06_095245) do
     t.integer "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "open_id"
   end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "open_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "time"
+    t.datetime "time"
     t.string "address"
     t.string "collection_status"
     t.string "customer_phone_number"
