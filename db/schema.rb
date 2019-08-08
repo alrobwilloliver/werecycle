@@ -44,4 +44,5 @@ ActiveRecord::Schema.define(version: 2019_08_08_081929) do
 
   add_foreign_key "orders", "collectors"
   add_foreign_key "orders", "customers"
+
 end
