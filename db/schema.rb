@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_095245) do
+ActiveRecord::Schema.define(version: 2019_08_08_081929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,25 +29,20 @@ ActiveRecord::Schema.define(version: 2019_08_06_095245) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "time"
     t.string "address"
     t.string "collection_status"
-    t.string "customer_phone_number"
+    t.integer "customer_phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "customer_id"
-    t.bigint "trash_collector_id"
+    t.bigint "collector_id"
+    t.date "date"
+    t.time "time"
+    t.index ["collector_id"], name: "index_orders_on_collector_id"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
-    t.index ["trash_collector_id"], name: "index_orders_on_trash_collector_id"
   end
 
-  create_table "trash_collectors", force: :cascade do |t|
-    t.string "name"
-    t.string "phone_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "orders", "collectors"
   add_foreign_key "orders", "customers"
-  add_foreign_key "orders", "trash_collectors"
+
 end
