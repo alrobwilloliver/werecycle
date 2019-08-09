@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2019_08_08_081929) do
     t.bigint "trash_collector_id"
     t.date "date"
     t.time "time"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["customer_id"], name: "index_orders_on_customer_id"
     t.index ["trash_collector_id"], name: "index_orders_on_trash_collector_id"
   end
